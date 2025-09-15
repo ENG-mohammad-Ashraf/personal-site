@@ -492,7 +492,11 @@ transition:all 0.5s ease-in-out;
     width: 420px;
   } 
 }
-@media (min-width:360px) and (max-width:575.98px){  
+@media (min-width:360px) and (max-width:575.98px){
+   .list{
+   display:flex;
+   flex-wrap: wrap;
+ }
   .social-icons{
     display: flex;
     flex-wrap: wrap;
@@ -547,6 +551,7 @@ footer p{
   justify-items: center;
 
 }
+
 
 
 
