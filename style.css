@@ -11,8 +11,6 @@ body{
   background-color:#ffffff;
   box-sizing: border-box;
   overflow-x: hidden;
-   margin: 0;
-  padding: 0;
 }
 .animated-div {
   opacity: 0;
@@ -548,4 +546,5 @@ footer p{
   justify-items: center;
 
 }
+
 
