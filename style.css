@@ -1,0 +1,547 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat";
+  
+}
+html{
+  scroll-behavior: smooth;
+}
+body{
+  background-color:#ffffff;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+.animated-div {
+  opacity: 0;
+  transform: translateY(50px); /* تبدأ منخفضة */
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.animated-div.visible {
+  opacity: 1;
+  transform: translateY(0); /* تتحرك للمكان الطبيعي */
+}
+
+header{
+  max-height: 300px;
+  height: 100%;
+  background: #3B37D3;
+  background: linear-gradient(17deg, rgba(59, 55, 211, 1) 0%, rgba(243, 88, 198, 1) 100%);
+  color: white;
+  display: block;
+  justify-content: center;
+  padding: 15px;
+  border: transparent;
+  border-bottom-right-radius:15px ;
+  border-bottom-left-radius:15px ;
+  z-index: 2;
+  max-height: 500px;
+}
+.header-div{
+  display: block;
+  text-align: center;
+}
+.header-div h1{
+  margin: 40px ;
+  line-height: 40px;
+}
+.header-div button {
+  margin-top: 25px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 11px;
+  font-weight: bold;
+  color: #000;
+  background: white;
+  background-size: 100% 100%;
+  background-position: top;
+  background-repeat: no-repeat;
+  transition: background 0.5s ease, color 0.5s ease;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  cursor:pointer;
+  box-shadow: 0px 0px 8px 0px rgba(25,25,18,0.75);
+-webkit-box-shadow: 0px 0px 8px 0px rgba(25,25,18,0.75);
+-moz-box-shadow: 0px 0px 8px 0px rgba(25,25,18,0.75);
+}
+
+.header-div button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(17deg, rgba(59, 55, 211, 1), rgba(243, 88, 198, 1));
+  z-index: -1;
+  transform: translateY(-100%);
+  transition: transform 0.5s ease;
+}
+
+.header-div button:hover::before {
+  transform: translateY(0);
+}
+
+.header-div button:hover {
+  color: white;
+}
+.header-div button:active{
+  transform: scale(0.99);
+}
+#content-div{
+  margin: 30px 45px;
+  display: flex;
+
+}
+.content-about-me h3 {
+  position: relative;
+  display: inline-block;
+  padding: 8px 10px;
+  border-left: 2px solid #9c04f5;
+  transition: 0.5s;
+  overflow: hidden;
+  z-index: 1;
+  color: rgb(0, 0, 0); /* للتأكد إن النص يظل واضحًا */
+  background-color: transparent;
+}
+
+.content-about-me h3::before,
+.content-about-me h3::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 0;
+  background: #ffffff;
+  transition: 0.5s ease;
+}
+
+.content-about-me h3::before {
+  top: 0;
+  left: 0;
+}
+
+.content-about-me h3::after {
+  bottom: 0;
+  left: 0;
+}
+
+.content-about-me h3:hover {
+  background-color: #9c04f5; /* ✅ هنا الخلفية */
+  border-right: 2px solid #ffffff; /* خط من اليمين عند الالتقاء */
+  border-left: 2px solid #ffffff; /* خط من اليمين عند الالتقاء */
+  color: white;
+}
+
+.content-about-me h3:hover::before,
+.content-about-me h3:hover::after {
+  width: 100%; /* الحدود تمشي لليمين */
+}
+
+.content-about-me p{
+  margin-top: 20px;
+  font-weight: bold;
+}
+#icons-of-my-experience {
+  margin-top: 70px;
+  h2{
+    margin-left: 45px;
+    margin-bottom: 25px;
+  }
+}
+svg{
+  width: 50px;
+}
+#forms-icons{
+  max-width: 3000px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  flex-wrap: wrap;
+  gap:87px
+}
+.icon{
+  box-shadow: 0px 0px 8px 0px rgba(25,25,18,0.75);
+  -webkit-box-shadow: 0px 0px 8px 0px rgba(25,25,18,0.75);
+  -moz-box-shadow: 0px 0px 8px 0px rgba(25,25,18,0.75);
+  border-radius: 25px;
+  padding: 20px;
+  font-weight: bold;
+  color: #000;
+  background: white;
+  background-size: 100% 100%;
+  background-position: top;
+  background-repeat: no-repeat;
+  transition: background 0.5s ease, color 0.5s ease;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+.icon::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(17deg, rgba(59, 55, 211, 1), rgba(243, 88, 198, 1));
+  z-index: -1;
+  transform: translateY(-100%);
+  transition: transform 0.5s ease;
+}
+.icon:hover::before {
+  transform: translateY(0);
+}
+.icon:hover {
+  color: white;
+}
+#My-Skills{
+  margin-left: 50px;
+  margin-bottom: 80px;
+}
+.list-of-skills{
+  font-weight: bold;
+  margin-left: 5px;
+}
+.HTML-word:hover{
+background: linear-gradient(17deg, rgba(59, 55, 211, 1), rgba(243, 88, 198, 1));
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+transform: scale(1.2);
+}
+.list-of-skills li,
+.progress-container{
+  display: flex;
+  gap: 10px;
+}
+.progress-container {
+  width:75%;
+  height: 30px;
+  background-color: #e0e0e0; /* اللون الرمادي للفارغ */
+  border-radius: 25px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(17deg, rgba(59, 55, 211, 1), rgba(243, 88, 198, 1));
+  transition: width 0.5s;
+  padding: 6px 10px;
+  text-align: end;
+}
+
+#choose-me{
+  background-color: #fcfbff;
+  margin: 50px 0;
+  padding: 35px 50px;
+  width: 100%;
+}
+.choose{
+  width: 100%;
+}
+.list{
+  width: 100%;
+}
+h2 {
+  position: relative;
+  display: inline-block;
+  padding: 8px 10px;
+  border-left: 2px solid #9c04f5;
+  transition: 0.5s;
+  overflow: hidden;
+  z-index: 1;
+  color: rgb(0, 0, 0); /* للتأكد إن النص يظل واضحًا */
+  background-color: transparent;
+}
+
+h2::before,
+h2::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 0;
+  background: #ffffff;
+  transition: 0.5s ease;
+}
+ h2::before {
+  top: 0;
+  left: 0;
+}
+
+h2::after {
+  bottom: 0;
+  left: 0;
+}
+
+h2:hover {
+  background-color: #9c04f5; /* ✅ هنا الخلفية */
+  border-right: 2px solid #ffffff; /* خط من اليمين عند الالتقاء */
+  border-left: 2px solid #ffffff; /* خط من اليمين عند الالتقاء */
+  color: white;
+}
+
+h2:hover::before,
+h2:hover::after {
+  width: 100%; /* الحدود تمشي لليمين */
+}
+
+
+
+
+ul li {
+  position: relative;
+  width: 100%;
+  display: block;
+  padding: 8px 10px;
+  border-left: 2px solid #9c04f5;
+  transition: 0.5s;
+  overflow: hidden;
+  z-index: 1;
+  color: rgb(0, 0, 0); /* للتأكد إن النص يظل واضحًا */
+  background-color: transparent;
+}
+
+ul li::before,
+ul li::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 0;
+  background: #ffffff;
+  transition: 0.5s ease;
+}
+ ul li::before {
+  top: 0;
+  left: 0;
+}
+
+ul li::after {
+  bottom: 0;
+  left: 0;
+}
+
+ul li:hover {
+  background: linear-gradient(17deg, rgba(59, 55, 211, 1), rgba(243, 88, 198, 1));
+  border-right: 2px solid #ffffff; /* خط من اليمين عند الالتقاء */
+  border-left: 2px solid #ffffff; /* خط من اليمين عند الالتقاء */
+  color: white;
+}
+/* this section is controle in the width of the line gradinet*/
+ul li:nth-child(1){
+  width:17%;
+}
+ul li:nth-child(2){
+  width:23%;
+}
+
+ul li:nth-child(3){
+  width:18%;
+}
+ul li:nth-child(4){
+  width:23%;
+}
+.social-icons {
+display: flex;
+gap: 150px;
+font-size: 30px;
+margin: 40px;
+flex-wrap: wrap;
+justify-content: center;
+justify-items: center;
+}
+
+.social-icons a {
+color: #333;
+text-decoration: none;
+}
+
+.social-icons i {
+transition: all 0.4s ease-in-out;
+padding: 5px;
+}
+
+/* تكبير الأيقونات عند التحويم */
+.social-icons i:hover {
+transform: scale(1.5);
+}
+/* تدرج اللون على أيقونة Instagram عند التحويم */
+#fab-fa-instagram:hover {
+background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+/* تدرج اللون الأخضر لأيقونة WhatsApp عند التحويم */
+#fab-fa-whatsapp:hover {
+background: linear-gradient(45deg, #25D366, #128C7E, #075E54);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+
+#fab-fa-gmail:hover {
+background: linear-gradient(to bottom,   #e62311 0%,#f43100 25%, #0f9d58 60%, #4285f4 75%)
+;-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+
+#Whatsapp{
+background: linear-gradient(to left,#25D366, #128C7E, #075E54);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+#instagram{
+background: linear-gradient(to left,#feda75, #fa7e1e, #d62976, #962fbf, #000000);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+#Follow-Me{
+border: none;
+border-radius: 25px;
+font-weight: bold;
+background-color: rgb(255, 190, 49);
+
+}
+.social-icons:hover > :not(:hover){
+opacity: 0.3;
+transition:all 0.5s ease-in-out;
+}
+#link {
+  margin-top: 25px;
+  width: 20px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 11px;
+  font-weight: bold;
+  color: #000;
+  background: white;
+  background-size: 100% 100%;
+  background-position: top;
+  background-repeat: no-repeat;
+  transition: all 0.5s ease, color 1s ease;
+  position: fixed;
+  bottom: 30px;
+  right: 50px;
+  z-index: 1000;
+  overflow: hidden;
+  cursor:pointer;
+  box-shadow: 0px 0px 8px 0px rgba(25,25,18,0.75);
+  -webkit-box-shadow: 0px 0px 8px 0px rgba(25,25,18,0.75);
+  -moz-box-shadow: 0px 0px 8px 0px rgba(25,25,18,0.75);
+}
+
+#link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(17deg, rgba(59, 55, 211, 1), rgba(243, 88, 198, 1));
+  z-index: -1;
+  transform: translateY(-100%);
+  transition: transform 1s ease;
+}
+#link:hover::before {
+  transform: translateY(0);
+}
+
+#link:hover {
+  color: rgb(0, 0, 0);
+  transform: scale(1.3);
+  transition: 1s ease-in-out;
+}
+#link a{
+  color: black;
+  text-decoration: none;
+}
+#content-with-me{
+  display: block;
+  text-align: center;
+  border: transparent;
+  transition: 0.5s ;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+@media (min-width: 678px) and (max-width:1310px) {
+  #content-div {
+    flex-direction: column;
+    margin: 15px;
+  }
+  .social-icons {
+    gap: 50px;
+  }
+  ul li {
+    margin-bottom: 10px;
+  }
+  .list{
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  ul li:nth-child(1){
+    width: 294px;
+  } 
+    ul li:nth-child(2){
+    width: 410px;
+  } 
+    ul li:nth-child(3){
+    width: 325px;
+  } 
+  ul li:nth-child(4){
+    width: 420px;
+  } 
+}
+@media (min-width:360px) and (max-width:575.98px){  
+  .social-icons{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+    
+  }
+    ul li:nth-child(1){
+    width: 294px;
+  } 
+    ul li:nth-child(2){
+    width: 410px;
+  } 
+    ul li:nth-child(3){
+    width: 325px;
+  } 
+  ul li:nth-child(4){
+    width: 420px;
+  } 
+
+}
+
+#My-Services{
+  margin-bottom: 50px;
+  width: 100%;
+}
+#My-Services-head{
+  margin: 10px 0 30px 50px;
+}
+.container-Services{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  justify-items: center;
+  gap: 30px;
+  height: 100%;
+}
+.paragragh-of-services{
+  padding-left: 10px;
+  line-height: 25px;
+}
+footer p{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  user-select: none;
+  cursor: no-drop;
+  border: transparent;
+}
+#fas-fe{
+  display:flex;
+  justify-content: center;
+  justify-items: center;
+}
