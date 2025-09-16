@@ -493,9 +493,33 @@ transition:all 0.5s ease-in-out;
   } 
 }
 @media (min-width:360px) and (max-width:575.98px){
-     section{
-    margin: 20px;
+     #content-div{
+    margin: 10px;
   }
+  #icons-of-my-experience{
+    h2{
+      margin: 10px;
+    }
+    section{
+      margin-top: 15px;
+    }
+  }
+  #choose-me{
+     padding-left: 10px;
+  }
+  #My-Skills{
+    margin-left: 10px;
+  }
+  #My-Services{
+    h2{
+      margin-left: 10px;
+    }
+
+  }
+  .container-Services{
+    margin: 0 10px 0 10px;
+  }
+
    .list{
    display:flex;
    flex-wrap: wrap;
@@ -567,6 +591,7 @@ footer p{
   justify-items: center;
 
 }
+
 
 
 
